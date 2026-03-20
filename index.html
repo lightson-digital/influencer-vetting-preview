@@ -19,8 +19,10 @@ body { font-family: Arial, Helvetica, sans-serif; background: #eceae6; color: #1
   border: 1px solid #ddd; border-radius: 3px; letter-spacing: 6px;
   font-family: monospace; outline: none; transition: border-color 0.15s;
 }
-.gate input:focus { border-color: #1A1A1A; }
+.gate input:focus-visible { border-color: #1A1A1A; outline: 2px solid #1A1A1A; outline-offset: 2px; }
 .gate .error { color: #d63b3b; font-size: 12px; margin-top: 12px; display: none; }
+.gate button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .gate button {
   margin-top: 20px; width: 100%; padding: 12px; font-size: 13px; font-weight: 600;
   text-transform: uppercase; letter-spacing: 1px; background: #1A1A1A; color: #fff;
@@ -30,15 +32,16 @@ body { font-family: Arial, Helvetica, sans-serif; background: #eceae6; color: #1
 </style>
 </head>
 <body>
-<div class="gate">
+<main class="gate">
   <h1>Lights On Digital</h1>
   <p>Influencer Assessments — Enter access code</p>
   <form id="gateForm">
+    <label for="code" class="visually-hidden">Access code</label>
     <input type="password" id="code" autocomplete="off" autofocus maxlength="10" placeholder="&bull;&bull;&bull;&bull;&bull;">
-    <div class="error" id="error">Incorrect code</div>
+    <div class="error" id="error" role="alert">Incorrect code</div>
     <button type="submit">Enter</button>
   </form>
-</div>
+</main>
 <script>
 (function() {
   var HASH = 'b69dbcec01dfecefe509f79b448a7a42294b1d0ae4ee474b8b9cd73db40ab71f';
@@ -50,6 +53,9 @@ body { font-family: Arial, Helvetica, sans-serif; background: #eceae6; color: #1
     var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
     return Array.from(new Uint8Array(buf)).map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
   }
+  document.getElementById('code').addEventListener('input', function() {
+    document.getElementById('error').style.display = 'none';
+  });
   document.getElementById('gateForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     var val = document.getElementById('code').value.trim();
