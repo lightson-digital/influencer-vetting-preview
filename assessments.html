@@ -350,21 +350,65 @@ body {
   color: var(--text-muted);
 }
 
+/* ── Back button (mobile only) ── */
+.back-btn {
+  display: none;
+}
+
 /* ── Mobile ── */
 @media (max-width: 900px) {
+  .report-header { padding: 16px 20px; }
+  .report-title { font-size: 20px; }
+  .header-right { display: none; }
+  .summary-bar { padding: 12px 20px; gap: 16px; }
+  .section-heading { padding: 12px 20px 8px; }
+  .report-footer { padding: 12px 20px; }
+  .footer-note { display: none; }
+
   .layout {
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(200px, 40vh) 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
   }
   .list-wrap {
     border-right: none;
-    border-bottom: 1px solid var(--lod-light-gray);
   }
-  .report-header { padding: 16px 20px; }
-  .summary-bar { padding: 12px 20px; gap: 16px; }
-  .list-item { padding: 12px 16px 12px 20px; }
-  .section-heading { padding: 12px 20px 8px; }
-  .report-footer { padding: 12px 20px; }
+  .list-item { padding: 14px 20px; min-height: 48px; }
+
+  /* Preview hidden by default on mobile */
+  .preview {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-out;
+  }
+  .preview.mobile-active {
+    transform: translateX(0);
+  }
+
+  /* Back button visible on mobile */
+  .back-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background: var(--surface-alt);
+    border: none;
+    border-bottom: 1px solid var(--lod-light-gray);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--lod-electric-blue);
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+  .back-btn:focus-visible {
+    outline: 2px solid var(--lod-electric-blue);
+    outline-offset: -2px;
+  }
+  .back-arrow { font-size: 16px; }
 }
 </style>
 </head>
@@ -396,6 +440,7 @@ body {
       <nav class="list" id="list" role="listbox" aria-label="Influencer assessments"></nav>
     </div>
     <main class="preview" id="preview">
+      <button class="back-btn" id="backBtn" type="button"><span class="back-arrow">&larr;</span> All profiles</button>
       <div class="preview-empty" id="empty">
         <span class="preview-empty-icon">&#8594;</span>
         <span class="preview-empty-text">Select a profile to preview</span>
@@ -468,6 +513,11 @@ function selectItem(idx) {
   iframe.src = h.handle + "/assessment.html";
 
   listEl.children[idx].scrollIntoView({ block: "nearest" });
+
+  // Mobile: slide preview into view
+  if (window.matchMedia("(max-width: 900px)").matches) {
+    previewEl.classList.add("mobile-active");
+  }
 }
 
 var verdictLabels = { pass: "Authentic", caution: "Caution", fail: "Fake/Inactive" };
@@ -500,8 +550,17 @@ document.addEventListener("keydown", function(e) {
   }
 });
 
-// Auto-select first
-selectItem(0);
+// Mobile: show preview pane on select, back button to return
+var isMobile = function() { return window.matchMedia("(max-width: 900px)").matches; };
+
+document.getElementById("backBtn").addEventListener("click", function() {
+  previewEl.classList.remove("mobile-active");
+});
+
+// Auto-select first (desktop only — mobile starts on list)
+if (!isMobile()) {
+  selectItem(0);
+}
 </script>
 </body>
 </html>
