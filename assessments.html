@@ -15,11 +15,33 @@
 <title>Influencer Assessments — Lights On Digital</title>
 <style>
 :root {
+  /* LOD brand tokens — match pace dashboard */
   --lod-black: #000000;
   --lod-white: #FFFFFF;
   --lod-near-black: #1A1A1A;
   --lod-light-gray: #E5E5E5;
   --lod-electric-blue: #0A84FF;
+  --lod-bg: #eceae6;
+
+  /* Surface tokens */
+  --surface: #FFFFFF;
+  --surface-alt: #fafafa;
+  --surface-hover: #f8f8f8;
+  --surface-active: #f2f2f2;
+  --border-light: #f5f5f5;
+
+  /* Text tokens */
+  --text-primary: var(--lod-near-black);
+  --text-secondary: #555;
+  --text-tertiary: #777;
+  --text-muted: #888;
+  --text-dim: #999;
+  --text-placeholder: #aaa;
+  --text-ghost: #bbb;
+  --text-faint: #ccc;
+  --border-kbd: #ddd;
+
+  /* Verdict tokens */
   --pass: #1a8c52;
   --pass-bg: #e8f5ee;
   --caution: #d97706;
@@ -32,8 +54,8 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #eceae6;
-  color: var(--lod-near-black);
+  background: var(--lod-bg);
+  color: var(--text-primary);
   font-size: 15px;
   height: 100vh;
   height: 100dvh;
@@ -46,7 +68,7 @@ body {
   height: 100dvh;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  background: #fff;
+  background: var(--surface);
   overflow: hidden;
 }
 
@@ -76,7 +98,7 @@ body {
 }
 .report-type {
   font-size: 12px;
-  color: #888;
+  color: var(--text-muted);
   margin-top: 4px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -88,7 +110,7 @@ body {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #888;
+  color: var(--text-muted);
 }
 .header-count-val {
   font-size: 17px;
@@ -98,14 +120,14 @@ body {
 }
 .header-hint {
   font-size: 12px;
-  color: #555;
+  color: var(--text-secondary);
   margin-top: 3px;
 }
 
 /* ── Summary bar ── */
 .summary-bar {
   padding: 16px 40px;
-  background: #fafafa;
+  background: var(--surface-alt);
   border-bottom: 1px solid var(--lod-light-gray);
   display: flex;
   align-items: center;
@@ -116,7 +138,7 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #555;
+  color: var(--text-secondary);
 }
 .summary-dot {
   width: 8px;
@@ -128,7 +150,7 @@ body {
 .summary-dot.fail { background: var(--fail); }
 .summary-val {
   font-weight: 600;
-  color: var(--lod-near-black);
+  color: var(--text-primary);
 }
 
 /* ── Layout ── */
@@ -149,7 +171,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.8px;
-  color: #555;
+  color: var(--text-secondary);
 }
 .section-heading::after {
   content: "";
@@ -178,9 +200,9 @@ body {
   gap: 12px;
   padding: 14px 24px 14px 28px;
   border: none;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid var(--border-light);
   background: transparent;
-  color: var(--lod-near-black);
+  color: var(--text-primary);
   text-align: left;
   cursor: pointer;
   font-family: inherit;
@@ -198,13 +220,13 @@ body {
   background: transparent;
   transition: background 0.1s;
 }
-.list-item:hover { background: #f8f8f8; }
+.list-item:hover { background: var(--surface-hover); }
 .list-item:focus-visible {
   outline: 2px solid var(--lod-electric-blue);
   outline-offset: -2px;
 }
 .list-item[aria-selected="true"] {
-  background: #f2f2f2;
+  background: var(--surface-active);
 }
 .list-item[aria-selected="true"]::before {
   background: var(--lod-electric-blue);
@@ -213,11 +235,11 @@ body {
 .item-handle {
   font-size: 14px;
   font-weight: 500;
-  color: var(--lod-near-black);
+  color: var(--text-primary);
 }
 .item-type {
   font-size: 11px;
-  color: #999;
+  color: var(--text-dim);
   margin-top: 2px;
   font-weight: 400;
 }
@@ -230,7 +252,7 @@ body {
 .item-followers {
   font-size: 12px;
   font-weight: 400;
-  color: #999;
+  color: var(--text-dim);
   letter-spacing: -0.02em;
 }
 
@@ -261,7 +283,7 @@ body {
 /* ── Preview pane ── */
 .preview {
   min-width: 0;
-  background: #fafafa;
+  background: var(--surface-alt);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -270,7 +292,7 @@ body {
   width: 100%;
   flex: 1;
   border: none;
-  background: #fff;
+  background: var(--surface);
   display: block;
 }
 .preview-empty {
@@ -281,27 +303,27 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: #ccc;
+  color: var(--text-faint);
 }
 .preview-empty-icon {
   font-size: 32px;
-  color: #ddd;
+  color: var(--border-kbd);
   margin-bottom: 4px;
 }
 .preview-empty-text {
   font-size: 14px;
   font-weight: 400;
-  color: #aaa;
+  color: var(--text-placeholder);
 }
 .preview-empty-hint {
   font-size: 12px;
-  color: #ccc;
+  color: var(--text-faint);
 }
 .kbd {
   display: inline-block;
   font-size: 11px;
-  color: #bbb;
-  border: 1px solid #ddd;
+  color: var(--text-ghost);
+  border: 1px solid var(--border-kbd);
   border-radius: 3px;
   padding: 1px 5px;
   margin: 0 1px;
@@ -325,7 +347,7 @@ body {
 }
 .footer-note {
   font-size: 10px;
-  color: #888;
+  color: var(--text-muted);
 }
 
 /* ── Mobile ── */
