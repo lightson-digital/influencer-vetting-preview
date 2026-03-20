@@ -1,0 +1,46 @@
+{
+  "verdict": "pass",
+  "confidence": 0.85,
+  "evidence": [
+    {
+      "signal": "Engagement rate",
+      "detail": "Instagram engagement rate of 0.54% (628 avg likes + comments / 116,728 followers) falls within expected range for mid-tier influencers (50-200K followers: 1-2%)",
+      "weight": "positive"
+    },
+    {
+      "signal": "Bot detector validation",
+      "detail": "fakeInfluencerScore of 0.0 indicates no signs of fake follower purchases or artificial engagement manipulation",
+      "weight": "positive"
+    },
+    {
+      "signal": "Follower-to-following ratio",
+      "detail": "Following 1,113 accounts with 116,728 followers (ratio: 104.9) shows typical influencer behavior, not mass-following patterns",
+      "weight": "positive"
+    },
+    {
+      "signal": "Content consistency",
+      "detail": "670 posts over established account timeframe with consistent aviation/fitness/faith themes demonstrates authentic long-term content creation",
+      "weight": "positive"
+    },
+    {
+      "signal": "Cross-platform presence",
+      "detail": "TikTok videos show 2.4-3M views with 97K-203K likes, indicating genuine audience engagement across platforms that aligns with Instagram following",
+      "weight": "positive"
+    },
+    {
+      "signal": "Comment quality",
+      "detail": "Instagram posts show 6-62 comments with engagement from verified accounts and authentic conversations, not generic bot responses",
+      "weight": "positive"
+    },
+    {
+      "signal": "Verification status",
+      "detail": "Instagram verified badge and partnerships with legitimate brands (Under Armour, Saucony, HyperNatural) indicate platform recognition of authenticity",
+      "weight": "positive"
+    },
+    {
+      "signal": "Engagement patterns",
+      "detail": "Recent posts show consistent like-to-comment ratios (408:38, 224:6, 865:39) without suspicious spikes suggesting purchased engagement",
+      "weight": "positive"
+    }
+  ]
+}

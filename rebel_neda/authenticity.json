@@ -1,0 +1,41 @@
+{
+  "verdict": "fail",
+  "confidence": 0.85,
+  "evidence": [
+    {
+      "signal": "fakeInfluencerScore",
+      "detail": "Bot detector shows fakeInfluencerScore of 0.7, indicating 70% probability the account has fake/inflated influence",
+      "weight": "negative"
+    },
+    {
+      "signal": "engagementScore anomaly",
+      "detail": "Bot detector engagementScore of 0.66 shows significant engagement pattern deviations from organic accounts",
+      "weight": "negative"
+    },
+    {
+      "signal": "hidden likes validation impossible",
+      "detail": "All Instagram posts show likes as -1 (hidden), preventing validation of engagement authenticity with 104,960 followers",
+      "weight": "negative"
+    },
+    {
+      "signal": "cross-platform engagement disparity",
+      "detail": "TikTok shows very low engagement: 238 likes on 2.3K views (10.3% rate), 660 likes on 18.1K views (3.6% rate) - inconsistent with claimed influence",
+      "weight": "negative"
+    },
+    {
+      "signal": "YouTube presence minimal",
+      "detail": "Only 1,520 subscribers on YouTube with 0 total views recorded, indicating audience doesn't convert across platforms",
+      "weight": "negative"
+    },
+    {
+      "signal": "calculated engagement rate inflated",
+      "detail": "Bot detector shows 13.5% average engagement rate, which is far above the 1-2% benchmark for mid-tier accounts (104K followers)",
+      "weight": "negative"
+    },
+    {
+      "signal": "account verification",
+      "detail": "Instagram account is verified, which adds some credibility to the profile",
+      "weight": "positive"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "verdict": "caution",
+  "confidence": 0.7,
+  "evidence": [
+    {
+      "signal": "Hidden likes on posts",
+      "detail": "Multiple recent posts show likes as -1 (hidden), including posts from March 2026 with 74, 57, 35, 8, 15, and 23 comments but no visible like counts. Cannot validate engagement authenticity without like data.",
+      "weight": "negative"
+    },
+    {
+      "signal": "Engagement rate calculation limited",
+      "detail": "With 21,891 followers, only 2 posts show actual like counts: 1,563 likes (7.1% rate) and 1,759 likes (8.0% rate). These rates are above the 1-2% benchmark for mid-tier accounts (50-200K), but sample size is too small for reliable assessment.",
+      "weight": "neutral"
+    },
+    {
+      "signal": "Bot detector shows low fake score",
+      "detail": "Bot detector reports fakeInfluencerScore of 0.0, indicating authentic audience based on follower analysis. Average engagement rate calculated at 2.33%, which aligns with visible post performance.",
+      "weight": "positive"
+    },
+    {
+      "signal": "Comment engagement appears genuine",
+      "detail": "Comments range from 4-123 per post with authentic conversation patterns. No obvious spam or bot-like generic responses observed in comment patterns.",
+      "weight": "positive"
+    },
+    {
+      "signal": "Account verification and age",
+      "detail": "Verified Instagram account with business category 'Digital creator', 167 posts, and established presence. Consistent content theme around lifestyle, fashion, and former NFL cheerleader background.",
+      "weight": "positive"
+    },
+    {
+      "signal": "Follower-following ratio",
+      "detail": "Following 2,739 accounts while having 21,891 followers (1:8 ratio) is reasonable for an influencer maintaining engagement with brands and peers.",
+      "weight": "positive"
+    }
+  ]
+}

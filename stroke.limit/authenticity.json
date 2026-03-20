@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "confidence": 0.9,
+  "evidence": [
+    {
+      "signal": "Instagram account non-existent",
+      "detail": "Profile returned 'not_found' error - the Instagram account @stroke.limit does not exist",
+      "weight": "negative"
+    },
+    {
+      "signal": "Facebook presence absent",
+      "detail": "Facebook profile shows 0 followers, 0 likes, empty name and about section - no meaningful presence",
+      "weight": "negative"
+    },
+    {
+      "signal": "TikTok-only presence",
+      "detail": "Only meaningful social media presence is on TikTok with 20 posts and low view counts (282-4680 views per video)",
+      "weight": "negative"
+    },
+    {
+      "signal": "Micro audience scale",
+      "detail": "Highest performing TikTok video has 4680 views, most videos under 1500 views - indicates very small reach",
+      "weight": "negative"
+    },
+    {
+      "signal": "Poor engagement rate",
+      "detail": "TikTok videos average 42 likes and 2.4 comments per 1285 views = 3.5% engagement rate, but with unknown follower count cannot validate audience size",
+      "weight": "negative"
+    },
+    {
+      "signal": "Missing follower data",
+      "detail": "TikTok profile data is empty - cannot determine follower count to assess influence scale or calculate proper engagement metrics",
+      "weight": "negative"
+    }
+  ]
+}

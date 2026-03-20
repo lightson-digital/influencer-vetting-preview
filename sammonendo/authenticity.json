@@ -1,0 +1,46 @@
+{
+  "verdict": "pass",
+  "confidence": 0.9,
+  "evidence": [
+    {
+      "signal": "engagement_rate",
+      "detail": "3.93% engagement rate (65 likes + comments per 1,648 average followers) falls within micro-tier benchmark of 1.5-3%, slightly above but not suspiciously high",
+      "weight": "positive"
+    },
+    {
+      "signal": "bot_detector_fake_score",
+      "detail": "fakeInfluencerScore of 0.0 indicates no signs of fake or purchased influence",
+      "weight": "positive"
+    },
+    {
+      "signal": "bot_detector_engagement",
+      "detail": "engagementScore of 0.18 shows normal engagement patterns with no anomalies",
+      "weight": "positive"
+    },
+    {
+      "signal": "follower_following_ratio",
+      "detail": "16,583 followers to 2,726 following gives ratio of 6.08:1, indicating legitimate audience growth without excessive following",
+      "weight": "positive"
+    },
+    {
+      "signal": "content_consistency",
+      "detail": "856 posts over account lifetime shows consistent content creation with professional photography/videography theme",
+      "weight": "positive"
+    },
+    {
+      "signal": "comment_quality",
+      "detail": "Comments range from 7-40 per post with genuine engagement from verified accounts and music industry professionals",
+      "weight": "positive"
+    },
+    {
+      "signal": "cross_platform_presence",
+      "detail": "Active on TikTok (71-8,060 likes per video) and Facebook (170 followers) with consistent content themes across platforms",
+      "weight": "positive"
+    },
+    {
+      "signal": "professional_connections",
+      "detail": "Tagged by verified accounts including Isabel LaRosa, Capitol Records, OnesToWatch, indicating legitimate industry connections",
+      "weight": "positive"
+    }
+  ]
+}

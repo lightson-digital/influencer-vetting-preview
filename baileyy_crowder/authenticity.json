@@ -1,0 +1,31 @@
+{
+  "verdict": "fail",
+  "confidence": 0.85,
+  "evidence": [
+    {
+      "signal": "fakeInfluencerScore",
+      "detail": "Bot detector shows 0.7 fake influencer score, indicating 70% probability this account has purchased followers or engagement",
+      "weight": "negative"
+    },
+    {
+      "signal": "hidden_likes",
+      "detail": "All recent posts show likesCount as -1, meaning likes are hidden. Cannot validate organic engagement without visible like counts",
+      "weight": "negative"
+    },
+    {
+      "signal": "engagement_anomaly",
+      "detail": "Bot detector engagement score of 0.598 indicates patterns deviate significantly from organic accounts",
+      "weight": "negative"
+    },
+    {
+      "signal": "engagement_rate",
+      "detail": "Bot detector calculated 17.2% engagement rate, which is extremely high for a 218K follower account and suggests artificial inflation",
+      "weight": "negative"
+    },
+    {
+      "signal": "post_volume",
+      "detail": "Account has 218K followers but only 32 posts, indicating potential follower purchasing rather than organic growth through content",
+      "weight": "negative"
+    }
+  ]
+}

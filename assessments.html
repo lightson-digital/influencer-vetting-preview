@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<script>
+(function() {
+  var HASH = 'b69dbcec01dfecefe509f79b448a7a42294b1d0ae4ee474b8b9cd73db40ab71f';
+  if (sessionStorage.getItem('lod_vetting_auth') !== HASH) {
+    window.location.replace('index.html');
+  }
+})();
+</script>
+<title>Influencer Assessments — Lights On Digital</title>
+<style>
+:root {
+  --lod-black: #000000;
+  --lod-white: #FFFFFF;
+  --lod-near-black: #1A1A1A;
+  --lod-light-gray: #E5E5E5;
+  --lod-electric-blue: #0A84FF;
+  --pass: #1a8c52;
+  --pass-bg: #e8f5ee;
+  --caution: #d97706;
+  --caution-bg: #fef3cd;
+  --fail: #d63b3b;
+  --fail-bg: #fde8e8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eceae6;
+  color: var(--lod-near-black);
+  font-size: 15px;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* ── Report shell ── */
+.report {
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* ── Header — matches pace dashboard ── */
+.report-header {
+  background: var(--lod-black);
+  color: var(--lod-white);
+  padding: 22px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid var(--lod-electric-blue);
+}
+.brand-mark {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--lod-electric-blue);
+  margin-bottom: 8px;
+}
+.report-title {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--lod-white);
+  letter-spacing: -0.5px;
+}
+.report-type {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.header-right {
+  text-align: right;
+}
+.header-count {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #888;
+}
+.header-count-val {
+  font-size: 17px;
+  color: var(--lod-white);
+  font-weight: 400;
+  margin-top: 5px;
+}
+.header-hint {
+  font-size: 12px;
+  color: #555;
+  margin-top: 3px;
+}
+
+/* ── Summary bar ── */
+.summary-bar {
+  padding: 16px 40px;
+  background: #fafafa;
+  border-bottom: 1px solid var(--lod-light-gray);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.summary-stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+}
+.summary-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+.summary-dot.pass { background: var(--pass); }
+.summary-dot.caution { background: var(--caution); }
+.summary-dot.fail { background: var(--fail); }
+.summary-val {
+  font-weight: 600;
+  color: var(--lod-near-black);
+}
+
+/* ── Layout ── */
+.layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ── Section heading — matches pace dashboard pattern ── */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #555;
+}
+.section-heading::after {
+  content: "";
+  height: 1px;
+  background: var(--lod-electric-blue);
+  width: 36px;
+}
+
+/* ── List ── */
+.list-wrap {
+  border-right: 1px solid var(--lod-light-gray);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.list {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.list-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px 14px 28px;
+  border: none;
+  border-bottom: 1px solid #f5f5f5;
+  background: transparent;
+  color: var(--lod-near-black);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+  position: relative;
+  transition: background 0.1s;
+}
+.list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: transparent;
+  transition: background 0.1s;
+}
+.list-item:hover { background: #f8f8f8; }
+.list-item:focus-visible {
+  outline: 2px solid var(--lod-electric-blue);
+  outline-offset: -2px;
+}
+.list-item[aria-selected="true"] {
+  background: #f2f2f2;
+}
+.list-item[aria-selected="true"]::before {
+  background: var(--lod-electric-blue);
+}
+
+.item-handle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--lod-near-black);
+}
+.item-type {
+  font-size: 11px;
+  color: #999;
+  margin-top: 2px;
+  font-weight: 400;
+}
+.item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+.item-followers {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+  letter-spacing: -0.02em;
+}
+
+/* ── Verdict badges — same pattern as pace dashboard status badges ── */
+.verdict {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.verdict-pass {
+  background: var(--pass-bg);
+  color: var(--pass);
+}
+.verdict-caution {
+  background: var(--caution-bg);
+  color: var(--caution);
+}
+.verdict-fail {
+  background: var(--fail-bg);
+  color: var(--fail);
+}
+
+/* ── Preview pane ── */
+.preview {
+  min-width: 0;
+  background: #fafafa;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.preview iframe {
+  width: 100%;
+  flex: 1;
+  border: none;
+  background: #fff;
+  display: block;
+}
+.preview-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ccc;
+}
+.preview-empty-icon {
+  font-size: 32px;
+  color: #ddd;
+  margin-bottom: 4px;
+}
+.preview-empty-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #aaa;
+}
+.preview-empty-hint {
+  font-size: 12px;
+  color: #ccc;
+}
+.kbd {
+  display: inline-block;
+  font-size: 11px;
+  color: #bbb;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin: 0 1px;
+  font-family: monospace;
+}
+
+/* ── Footer — matches pace dashboard ── */
+.report-footer {
+  background: var(--lod-black);
+  padding: 14px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-brand {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--lod-electric-blue);
+}
+.footer-note {
+  font-size: 10px;
+  color: #888;
+}
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(200px, 40dvh) 1fr;
+  }
+  .list-wrap {
+    border-right: none;
+    border-bottom: 1px solid var(--lod-light-gray);
+  }
+  .report-header { padding: 16px 20px; }
+  .summary-bar { padding: 12px 20px; gap: 16px; }
+  .list-item { padding: 12px 16px 12px 20px; }
+  .section-heading { padding: 12px 20px 8px; }
+  .report-footer { padding: 12px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="report">
+
+  <!-- Header -->
+  <div class="report-header">
+    <div>
+      <div class="brand-mark">Lights On Digital</div>
+      <div class="report-title">Influencer Assessments</div>
+      <div class="report-type">Authenticity Screening</div>
+    </div>
+    <div class="header-right">
+      <div class="header-count">Profiles Assessed</div>
+      <div class="header-count-val" id="count"></div>
+      <div class="header-hint">Use arrow keys to navigate</div>
+    </div>
+  </div>
+
+  <!-- Summary bar -->
+  <div class="summary-bar" id="summary-bar"></div>
+
+  <!-- Main layout -->
+  <div class="layout">
+    <div class="list-wrap">
+      <div class="section-heading">Assessed Profiles</div>
+      <nav class="list" id="list" role="listbox" aria-label="Influencer assessments"></nav>
+    </div>
+    <main class="preview" id="preview">
+      <div class="preview-empty" id="empty">
+        <span class="preview-empty-icon">&#8594;</span>
+        <span class="preview-empty-text">Select a profile to preview</span>
+        <span class="preview-empty-hint"><span class="kbd">&uarr;</span> <span class="kbd">&darr;</span> to navigate</span>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div class="report-footer">
+    <div class="footer-brand">Lights On Digital</div>
+    <div class="footer-note">Assessments generated via AI analysis &middot; review before acting</div>
+  </div>
+
+</div>
+
+<script>
+const handles = [
+  { handle: "baileyy_crowder", followers: "217,929", type: "lifestyle / wedding", verdict: "fail" },
+  { handle: "pilotpete.fly", followers: "116,728", type: "aviation / fitness", verdict: "pass" },
+  { handle: "rebel_neda", followers: "104,960", type: "lifestyle / acting", verdict: "fail" },
+  { handle: "projectinspo", followers: "22,643", type: "surf / lifestyle", verdict: "pass" },
+  { handle: "itsaudreyy_a", followers: "21,891", type: "fashion / lifestyle", verdict: "caution" },
+  { handle: "joshuacirjak", followers: "21,679", type: "creative / video", verdict: "pass" },
+  { handle: "sammonendo", followers: "16,583", type: "music / photography", verdict: "pass" },
+  { handle: "ferrara_alexis", followers: "15,237", type: "twin mom / lifestyle", verdict: "caution" },
+  { handle: "crazyrichnomad", followers: "5,600", type: "luxury travel / food", verdict: "caution" },
+  { handle: "britfinn_", followers: "2,277", type: "mom / lifestyle", verdict: "pass" },
+  { handle: "himaniaggarwal", followers: "470", type: "fashion / inactive", verdict: "fail" },
+  { handle: "stroke.limit", followers: "\u2014", type: "golf / tiktok only", verdict: "fail" },
+];
+
+// Count
+document.getElementById("count").textContent = handles.length;
+
+// Summary bar
+const counts = { pass: 0, caution: 0, fail: 0 };
+handles.forEach(h => counts[h.verdict]++);
+const summaryEl = document.getElementById("summary-bar");
+summaryEl.innerHTML = `
+  <span class="summary-stat"><span class="summary-dot pass"></span>Authentic <span class="summary-val">${counts.pass}</span></span>
+  <span class="summary-stat"><span class="summary-dot caution"></span>Caution <span class="summary-val">${counts.caution}</span></span>
+  <span class="summary-stat"><span class="summary-dot fail"></span>Fake/Inactive <span class="summary-val">${counts.fail}</span></span>
+`;
+
+// List
+const listEl = document.getElementById("list");
+const previewEl = document.getElementById("preview");
+const emptyEl = document.getElementById("empty");
+
+let activeIdx = -1;
+
+function selectItem(idx) {
+  if (idx < 0 || idx >= handles.length) return;
+  activeIdx = idx;
+
+  listEl.querySelectorAll(".list-item").forEach(function(el, i) {
+    el.setAttribute("aria-selected", i === idx ? "true" : "false");
+  });
+
+  var h = handles[idx];
+  emptyEl.style.display = "none";
+
+  var iframe = previewEl.querySelector("iframe");
+  if (!iframe) {
+    iframe = document.createElement("iframe");
+    iframe.title = "Assessment preview";
+    previewEl.appendChild(iframe);
+  }
+  iframe.src = h.handle + "/assessment.html";
+
+  listEl.children[idx].scrollIntoView({ block: "nearest" });
+}
+
+var verdictLabels = { pass: "Authentic", caution: "Caution", fail: "Fake/Inactive" };
+
+handles.forEach(function(h, i) {
+  var btn = document.createElement("button");
+  btn.className = "list-item";
+  btn.setAttribute("role", "option");
+  btn.setAttribute("aria-selected", "false");
+  btn.innerHTML =
+    '<div>' +
+      '<div class="item-handle">@' + h.handle + '</div>' +
+      '<div class="item-type">' + h.type + '</div>' +
+    '</div>' +
+    '<div class="item-right">' +
+      '<span class="item-followers">' + h.followers + '</span>' +
+      '<span class="verdict verdict-' + h.verdict + '">' + verdictLabels[h.verdict] + '</span>' +
+    '</div>';
+  btn.addEventListener("click", function() { selectItem(i); });
+  listEl.appendChild(btn);
+});
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "ArrowDown") {
+    e.preventDefault();
+    selectItem(activeIdx < handles.length - 1 ? activeIdx + 1 : 0);
+  } else if (e.key === "ArrowUp") {
+    e.preventDefault();
+    selectItem(activeIdx > 0 ? activeIdx - 1 : handles.length - 1);
+  }
+});
+
+// Auto-select first
+selectItem(0);
+</script>
+</body>
+</html>

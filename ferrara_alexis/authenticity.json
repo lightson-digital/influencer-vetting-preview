@@ -1,0 +1,41 @@
+{
+  "verdict": "caution",
+  "confidence": 0.7,
+  "evidence": [
+    {
+      "signal": "Hidden likes on Instagram",
+      "detail": "Multiple recent posts show likesCount: -1, meaning engagement data is hidden from public view on posts from March 16, March 15, and others",
+      "weight": "negative"
+    },
+    {
+      "signal": "Engagement rate calculation impossible",
+      "detail": "Cannot calculate accurate engagement rate for recent posts due to hidden likes. Visible posts show rates ranging from 0.31% (48 likes/15,237 followers) to 32.13% (4,896 likes/15,237 followers)",
+      "weight": "negative"
+    },
+    {
+      "signal": "One viral post skews metrics",
+      "detail": "Breastfeeding video has 4,896 likes and 506 comments while most other visible posts have 100-200 likes and 5-30 comments, suggesting inconsistent organic reach",
+      "weight": "negative"
+    },
+    {
+      "signal": "Low bot detector scores",
+      "detail": "fakeInfluencerScore: 0.0, botScore: 0.0, humanScore: 1.0, indicating the account itself appears authentic",
+      "weight": "positive"
+    },
+    {
+      "signal": "Cross-platform presence",
+      "detail": "Active on TikTok with 85-3,415 likes per video and consistent content themes matching Instagram, showing genuine multi-platform engagement",
+      "weight": "positive"
+    },
+    {
+      "signal": "Follower-to-following ratio",
+      "detail": "15,237 followers to 2,713 following (5.62 ratio) is reasonable for a micro-influencer, not exhibiting typical fake account patterns",
+      "weight": "positive"
+    },
+    {
+      "signal": "Content consistency",
+      "detail": "457 posts over time with consistent twin mom/lifestyle theme, verified status, and business category alignment suggest authentic account development",
+      "weight": "positive"
+    }
+  ]
+}

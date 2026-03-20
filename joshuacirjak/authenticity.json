@@ -1,0 +1,51 @@
+{
+  "verdict": "pass",
+  "confidence": 0.85,
+  "evidence": [
+    {
+      "signal": "follower count",
+      "detail": "21,679 followers places this account in the micro-influencer tier (10K-50K)",
+      "weight": "neutral"
+    },
+    {
+      "signal": "engagement rate",
+      "detail": "Calculated engagement rate of 3.80% exceeds the micro-influencer benchmark of 1.5-3%, indicating strong organic engagement",
+      "weight": "positive"
+    },
+    {
+      "signal": "follower-to-following ratio",
+      "detail": "Follows 1,410 while having 21,679 followers (ratio 15.4:1), which is reasonable for a content creator",
+      "weight": "positive"
+    },
+    {
+      "signal": "content consistency",
+      "detail": "1,585 posts over established account shows consistent content production with clear niche in travel, lifestyle, and creative work",
+      "weight": "positive"
+    },
+    {
+      "signal": "like-to-comment ratios",
+      "detail": "Recent posts show healthy ratios: wedding post (4,104 likes, 113 comments = 36:1), VSCO collab (422 likes, 63 comments = 7:1)",
+      "weight": "positive"
+    },
+    {
+      "signal": "cross-platform presence",
+      "detail": "Active on TikTok with strong performance (12.4K likes on wedding video, 252.6K views on apartment update) validates Instagram audience",
+      "weight": "positive"
+    },
+    {
+      "signal": "bot detector analysis",
+      "detail": "fakeInfluencerScore of 0.0 indicates no signs of artificial inflation, humanScore of 0.92 confirms real person operates account",
+      "weight": "positive"
+    },
+    {
+      "signal": "brand collaborations",
+      "detail": "Legitimate partnerships with established brands (VSCO, Erste Bank, Intersport) suggest vetted influencer status",
+      "weight": "positive"
+    },
+    {
+      "signal": "hidden likes concern",
+      "detail": "One post shows likes as -1 but this appears to be data collection issue rather than Instagram hiding likes, as other recent posts show normal like counts",
+      "weight": "neutral"
+    }
+  ]
+}

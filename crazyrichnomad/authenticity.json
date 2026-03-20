@@ -1,0 +1,36 @@
+{
+  "verdict": "caution",
+  "confidence": 0.7,
+  "evidence": [
+    {
+      "signal": "hidden_likes_mixed_data",
+      "detail": "Multiple posts show likes as -1 (hidden), including posts with 5 comments, 2 comments, and 1 comment each. Cannot validate engagement authenticity when likes are concealed",
+      "weight": "negative"
+    },
+    {
+      "signal": "engagement_rate_anomaly",
+      "detail": "Bot detector shows engagement score of 0.5004 (above 0.5 threshold) and calculated engagement rate of 0.87% which is within nano influencer range (3-5%) but the anomaly score indicates irregular patterns",
+      "weight": "negative"
+    },
+    {
+      "signal": "follower_following_ratio",
+      "detail": "Following 2,576 accounts while having 5,600 followers. Ratio of 2.17 is concerning for an influencer - following too many accounts relative to influence level",
+      "weight": "negative"
+    },
+    {
+      "signal": "cross_platform_validation",
+      "detail": "Instagram shows 5,600 followers with engagement issues, TikTok shows much higher engagement rates (95-305 likes on 644-7,438 views) suggesting audience may not transfer between platforms",
+      "weight": "neutral"
+    },
+    {
+      "signal": "content_consistency",
+      "detail": "1,376 posts over account lifetime with travel/luxury focus is consistent. Recent posts show authentic travel content with proper location tagging and hotel partnerships",
+      "weight": "positive"
+    },
+    {
+      "signal": "bot_detector_signals",
+      "detail": "fakeInfluencerScore of 0.0 indicates genuine account, humanScore of 0.91 confirms real person operation, but engagementScore above 0.5 flags irregular engagement patterns",
+      "weight": "neutral"
+    }
+  ]
+}

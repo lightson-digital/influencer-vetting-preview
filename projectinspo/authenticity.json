@@ -1,0 +1,46 @@
+{
+  "verdict": "pass",
+  "confidence": 0.85,
+  "evidence": [
+    {
+      "signal": "engagement_rate",
+      "detail": "Calculated engagement rate of 0.98% (355+100/22643 on most recent post) falls within expected range for micro-tier influencer (10-50K followers: 1.5-3%)",
+      "weight": "positive"
+    },
+    {
+      "signal": "bot_detector_fake_score",
+      "detail": "fakeInfluencerScore of 0.0 indicates no detected fake influencer patterns",
+      "weight": "positive"
+    },
+    {
+      "signal": "bot_detector_human_score",
+      "detail": "humanScore of 0.91 confirms real person operates the account",
+      "weight": "positive"
+    },
+    {
+      "signal": "follower_following_ratio",
+      "detail": "Following 3,695 accounts while having 22,643 followers (ratio 6.1) is reasonable for an active content creator",
+      "weight": "positive"
+    },
+    {
+      "signal": "content_consistency",
+      "detail": "1,705 posts over account lifetime shows consistent posting history with authentic surf/lifestyle content theme",
+      "weight": "positive"
+    },
+    {
+      "signal": "engagement_distribution",
+      "detail": "Recent posts show varied engagement (42-621 likes, 3-116 comments) indicating organic audience interaction patterns",
+      "weight": "positive"
+    },
+    {
+      "signal": "cross_platform_presence",
+      "detail": "Active presence across Instagram, YouTube (3,710 subscribers), and Facebook (6,078 followers) with consistent branding",
+      "weight": "positive"
+    },
+    {
+      "signal": "comment_quality",
+      "detail": "Comment counts range from 3-116 per post, suggesting genuine audience engagement rather than inflated metrics",
+      "weight": "positive"
+    }
+  ]
+}

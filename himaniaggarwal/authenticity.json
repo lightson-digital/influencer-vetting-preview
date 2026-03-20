@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "confidence": 0.9,
+  "evidence": [
+    {
+      "signal": "Private Instagram account",
+      "detail": "Account is private with 470 followers, making content and engagement impossible to evaluate",
+      "weight": "negative"
+    },
+    {
+      "signal": "Poor follower-to-following ratio",
+      "detail": "Following 1,236 accounts while having only 470 followers (ratio of 2.6:1) indicates lack of influence",
+      "weight": "negative"
+    },
+    {
+      "signal": "YouTube subscriber inflation",
+      "detail": "YouTube shows 54,200 subscribers but 0 videos and 0 total views, indicating purchased or inactive subscribers with no content",
+      "weight": "negative"
+    },
+    {
+      "signal": "Cross-platform inconsistency",
+      "detail": "Massive discrepancy between 470 Instagram followers and 54K YouTube subscribers with zero engagement suggests artificial inflation",
+      "weight": "negative"
+    },
+    {
+      "signal": "No accessible content",
+      "detail": "No post data available across any platform due to private settings or lack of content, making engagement validation impossible",
+      "weight": "negative"
+    },
+    {
+      "signal": "Empty profile data",
+      "detail": "Instagram biography and full name are blank, Facebook profile shows 0 engagement metrics, indicating minimal genuine presence",
+      "weight": "negative"
+    }
+  ]
+}

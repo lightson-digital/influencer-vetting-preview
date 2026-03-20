@@ -1,0 +1,41 @@
+{
+  "verdict": "pass",
+  "confidence": 0.85,
+  "evidence": [
+    {
+      "signal": "engagement_rate",
+      "detail": "5.83% engagement rate on 2,277 followers falls within nano-influencer benchmark of 3-5%, indicating authentic audience interaction",
+      "weight": "positive"
+    },
+    {
+      "signal": "follower_following_ratio",
+      "detail": "Follows 2,469 people with 2,277 followers (0.92 ratio) - normal for personal accounts, not indicative of purchased followers",
+      "weight": "neutral"
+    },
+    {
+      "signal": "bot_detector_fake_score",
+      "detail": "fakeInfluencerScore of 0.0 indicates no evidence of artificial follower inflation or fake influencer behavior",
+      "weight": "positive"
+    },
+    {
+      "signal": "bot_detector_human_score",
+      "detail": "humanScore of 0.87 confirms account is operated by real person, not automated",
+      "weight": "positive"
+    },
+    {
+      "signal": "engagement_patterns",
+      "detail": "Recent posts show consistent like-to-comment ratios: 142 likes/14 comments, 139 likes/7 comments, 348 likes/16 comments - normal engagement distribution",
+      "weight": "positive"
+    },
+    {
+      "signal": "content_consistency",
+      "detail": "148 posts over account lifetime with consistent momlife/lifestyle content theme and regular posting frequency",
+      "weight": "positive"
+    },
+    {
+      "signal": "bot_detector_engagement",
+      "detail": "engagementScore of 0.20 indicates some engagement anomalies but within acceptable range for organic accounts",
+      "weight": "neutral"
+    }
+  ]
+}
