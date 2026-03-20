@@ -1,0 +1,41 @@
+{
+  "verdict": "pass",
+  "confidence": 0.85,
+  "evidence": [
+    {
+      "signal": "Engagement rate",
+      "detail": "1.64% engagement rate (2,312 average likes + comments / 141,282 followers) aligns with micro-tier benchmark of 1.5-3%",
+      "weight": "positive"
+    },
+    {
+      "signal": "Bot detector analysis",
+      "detail": "fakeInfluencerScore of 0.0 indicates no artificial inflation detected, humanScore of 0.92 confirms authentic account operation",
+      "weight": "positive"
+    },
+    {
+      "signal": "Content consistency",
+      "detail": "1,093 posts over established account history shows consistent content production with educational Japanese language focus",
+      "weight": "positive"
+    },
+    {
+      "signal": "Comment quality",
+      "detail": "Recent posts show genuine engagement with 192, 195, 58+ comments featuring substantive responses about Japanese culture and language learning",
+      "weight": "positive"
+    },
+    {
+      "signal": "Cross-platform presence",
+      "detail": "Active across Instagram (141K), TikTok (295K-2M likes on videos), and Facebook (59K) with consistent branding and authentic engagement patterns",
+      "weight": "positive"
+    },
+    {
+      "signal": "Professional verification",
+      "detail": "Featured on Apple TV+ 'The Reluctant Traveler', Forbes 30 Under 30 recognition, and established tour guide business indicate legitimate influence",
+      "weight": "positive"
+    },
+    {
+      "signal": "Follower quality",
+      "detail": "Healthy follower-to-following ratio of 70:1 (141,282 followers / 2,014 following) suggests organic audience growth",
+      "weight": "positive"
+    }
+  ]
+}

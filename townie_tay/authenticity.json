@@ -1,0 +1,41 @@
+{
+  "verdict": "pass",
+  "confidence": 0.85,
+  "evidence": [
+    {
+      "signal": "engagement rate",
+      "detail": "Instagram engagement rate of 4.98% (calculated from posts with 1105-7245 likes and 6-610 comments on 41,541 followers) falls within expected micro-influencer range of 1.5-3%, slightly above but not suspiciously high",
+      "weight": "positive"
+    },
+    {
+      "signal": "bot detector analysis",
+      "detail": "fakeInfluencerScore of 0.0 indicates no signs of fake influencer behavior, humanScore of 0.93 confirms real person operation, engagementScore of 0.13 shows normal engagement patterns",
+      "weight": "positive"
+    },
+    {
+      "signal": "follower-to-following ratio",
+      "detail": "Following 3,619 accounts with 41,541 followers gives ratio of 11.5, which is reasonable for an active micro-influencer who engages with community",
+      "weight": "positive"
+    },
+    {
+      "signal": "content consistency",
+      "detail": "1,099 posts over established account shows consistent content creation, focused Hawaii food/lifestyle niche with authentic personal moments like engagement announcement (7,245 likes)",
+      "weight": "positive"
+    },
+    {
+      "signal": "comment quality",
+      "detail": "High comment counts (23-610 per post) suggest genuine audience engagement, with personal milestone posts generating expected higher engagement",
+      "weight": "positive"
+    },
+    {
+      "signal": "cross-platform presence",
+      "detail": "Active across Instagram, TikTok (views ranging 1,026-49,900), and Facebook with consistent content themes, showing authentic multi-platform strategy",
+      "weight": "positive"
+    },
+    {
+      "signal": "external validation",
+      "detail": "Media coverage from Hawaii News Now and KHON2, business relationships with local Hawaii establishments, demonstrates legitimate local influence",
+      "weight": "positive"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "verdict": "pass",
+  "confidence": 0.9,
+  "evidence": [
+    {
+      "signal": "Engagement rate",
+      "detail": "Bot detector shows 0.91% average engagement rate, which falls within the expected 0.5-1.5% range for accounts with 24,369 followers in the macro tier",
+      "weight": "positive"
+    },
+    {
+      "signal": "Bot detection scores",
+      "detail": "fakeInfluencerScore of 0.0 and botScore of 0.0 with humanScore of 1.0 indicate authentic account with organic followers",
+      "weight": "positive"
+    },
+    {
+      "signal": "Follower-to-following ratio",
+      "detail": "Follows 368 accounts with 24,369 followers (ratio 66.2:1), indicating selective following behavior consistent with genuine influencer",
+      "weight": "positive"
+    },
+    {
+      "signal": "Content consistency",
+      "detail": "885 posts over established account history with consistent athletic/sports theme around skiing and surfing, showing genuine content creation",
+      "weight": "positive"
+    },
+    {
+      "signal": "Verified status",
+      "detail": "Account is verified and marked as business account in athlete category, indicating platform recognition",
+      "weight": "positive"
+    },
+    {
+      "signal": "Comment quality",
+      "detail": "Recent posts show genuine engagement with 1-59 comments per post, including thoughtful responses from followers about her athletic journey",
+      "weight": "positive"
+    }
+  ]
+}
